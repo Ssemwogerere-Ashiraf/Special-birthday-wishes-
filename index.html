@@ -7,6 +7,7 @@
     body {
       background: linear-gradient(to right, #ffecd2, #fcb69f);
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -54,6 +55,30 @@
         opacity: 0;
       }
     }
+
+    #showMessageBtn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff66b2;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    #birthdayWish {
+      margin-top: 20px;
+      padding: 20px;
+      max-width: 700px;
+      text-align: center;
+      font-size: 1.3em;
+      display: none;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
   </style>
 </head>
 <body>
@@ -61,7 +86,21 @@
     Happy Birthday<br>Tr Ssebakadde Henry!
   </div>
 
+  <button id="showMessageBtn" onclick="showMessage()">Click for a Special Message</button>
+
+  <div id="birthdayWish">
+    Dear Tr Ssebakadde Henry,<br><br>
+    On this special day, we celebrate a truly remarkable teacher and an incredible soul. Your dedication, wisdom, and kind heart have touched so many lives and inspired us in countless ways.<br><br>
+    May this birthday bring you abundant joy, peace, and fulfillment. May every step you take be blessed with success, and may happiness follow you wherever you go. You deserve all the wonderful things life has to offer.<br><br>
+    Happy Birthday once again, Sir! May this be your best year yet!
+  </div>
+
   <script>
+    function showMessage() {
+      document.getElementById("birthdayWish").style.display = "block";
+      document.getElementById("showMessageBtn").style.display = "none";
+    }
+
     // Create falling confetti
     for (let i = 0; i < 100; i++) {
       let confetti = document.createElement("div");
