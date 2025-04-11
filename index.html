@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Tr Ssebakadde Henry</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    .birthday-message {
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+      animation: moveText 5s infinite alternate ease-in-out,
+                 colorChange 3s infinite;
+    }
+
+    @keyframes moveText {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-20px); }
+    }
+
+    @keyframes colorChange {
+      0% { color: red; }
+      25% { color: orange; }
+      50% { color: green; }
+      75% { color: blue; }
+      100% { color: violet; }
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: gold;
+      animation: fall 3s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="birthday-message">
+    Happy Birthday<br>Tr Ssebakadde Henry!
+  </div>
+
+  <script>
+    // Create falling confetti
+    for (let i = 0; i < 100; i++) {
+      let confetti = document.createElement("div");
+      confetti.classList.add("confetti");
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
